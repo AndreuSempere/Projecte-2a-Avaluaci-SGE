@@ -1,0 +1,24 @@
+<odoo>
+    <record id="zoo_action" model="ir.actions.act_window">
+        <field name="name">Zoo</field>
+        <field name="res_model">zoo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="view_zoo_tree" model="ir.ui.view">
+        <field name="name">zoo.tree</field>
+        <field name="model">zoo</field>
+        <field name="arch" type="xml">
+            <tree string="Zoo">
+                <field name="nombre" string="Nombre"/>
+                <field name="continentes" string="Continentes"/>
+                <field name="pais_id" string="Pais"/>
+                <field name="provincia_id" string="Provincia"/>
+                <field name="ciudad" string="Ciudad"/>
+                <field name="superficie" string="Superficie (m2)"/>
+                <field name="animal_ids" string="Animal"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

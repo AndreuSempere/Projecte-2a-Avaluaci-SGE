@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="zoo" name="Zoo">
+        <menuitem id="zoo_menu_action" action="zoo_action" name="Zoo's"/>
+        <menuitem id="especie_menu_action" action="especie_action" name="Especie"/>
+        <menuitem id="animal_menu_action" action="animal_action" name="Animal"/>
+    </menuitem>
+
+</odoo>

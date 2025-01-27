@@ -1,0 +1,24 @@
+<odoo>
+    <record id="animal_action" model="ir.actions.act_window">
+        <field name="name">Animal</field>
+        <field name="res_model">animal</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="view_animal_tree" model="ir.ui.view">
+        <field name="name">animal.tree</field>
+        <field name="model">animal</field>
+        <field name="arch" type="xml">
+            <tree string="Animal">
+                <field name="nombre" string="Nombre"/>
+                <field name="continente_origen" string="Continente Origen"/>
+                <field name="pais_origen" string="Pais Origen"/>
+                <field name="fecha_nacimiento" string="Fecha Nacimiento"/>
+                <field name="sexo" string="Sexo"/>
+                <field name="especie_id" string="Especie"/>
+                <field name="zoo_id" string="Zoo"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <record id="especie_action" model="ir.actions.act_window">
+        <field name="name">Especie</field>
+        <field name="res_model">especie</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="view_especie_tree" model="ir.ui.view">
+        <field name="name">especie.tree</field>
+        <field name="model">especie</field>
+        <field name="arch" type="xml">
+            <tree string="Especie">
+                <field name="name_vulgar" string="Nombre vulgar"/>
+                <field name="name_cientifico" string="Nombre Cientifico"/>
+                <field name="familia" string="Familia"/>
+                <field name="peligro" string="Peligro"/>
+                <field name="peligro_extincion" string="Peligro extincion"/>
+                <field name="animal_ids" string="Animal"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
