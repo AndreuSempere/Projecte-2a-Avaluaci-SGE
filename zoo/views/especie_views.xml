@@ -12,11 +12,44 @@
             <tree string="Especie">
                 <field name="name_vulgar" string="Nombre vulgar"/>
                 <field name="name_cientifico" string="Nombre Cientifico"/>
-                <field name="familia" string="Familia"/>
+                <field name="familia_id" string="Familia"/>
                 <field name="peligro" string="Peligro"/>
                 <field name="peligro_extincion" string="Peligro extincion"/>
                 <field name="animal_ids" string="Animal"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="especie_view_form" model="ir.ui.view">
+        <field name="name">especie.form</field>
+        <field name="model">especie</field>
+        <field name="arch" type="xml">
+            <form string="Especie Form">
+                <sheet>
+                    <div class="oe_title">
+                        <h3><field name="name_vulgar" string="Nombre Vulgar"/></h3>
+                        <h3><field name="name_cientifico" string="Nombre Cientifico"/></h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="peligro" string="Peligro"/>
+                            <field name="peligro_extincion" string="Peligro de extincion"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Animales Pertenecen">
+                            <group>
+                                <field name="animal_ids"/>
+                            </group>
+                        </page>
+                        <page string="Familia Pertenecen">
+                            <group>
+                                <field name="familia_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
         </field>
     </record>
 

@@ -1,6 +1,9 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 "access_animal","access.animal","model_animal","base.group_user",1,1,1,1
-"access_estate_especie","access.especie","model_especie","base.group_user",1,1,1,1
+"access_especie","access.especie","model_especie","base.group_user",1,1,1,1
 "access_zoo","access.zoo","model_zoo","base.group_user",1,1,1,1
+"access_animal_sexo_tags","access.animal_sexo_tags","model_animal_sexo_tags","base.group_user",1,1,1,1
+"access_familia","access.familia","model_familia","base.group_user",1,1,1,1
+
 
 

@@ -1,0 +1,41 @@
+<odoo>
+    <record id="familia_action" model="ir.actions.act_window">
+        <field name="name">Familias</field>
+        <field name="res_model">familia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_familia_tree" model="ir.ui.view">
+        <field name="name">familia.tree</field>
+        <field name="model">familia</field>
+        <field name="arch" type="xml">
+            <tree string="Familias">
+                <field name="nombre"/>
+                <field name="descripcion"/>
+                <field name="especie_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_familia_form" model="ir.ui.view">
+        <field name="name">familia.form</field>
+        <field name="model">familia</field>
+        <field name="arch" type="xml">
+            <form string="Familia de Especies">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Especies">
+                            <field name="especie_id">
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

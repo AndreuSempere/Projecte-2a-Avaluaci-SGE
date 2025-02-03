@@ -14,10 +14,45 @@
                 <field name="continente_origen" string="Continente Origen"/>
                 <field name="pais_origen" string="Pais Origen"/>
                 <field name="fecha_nacimiento" string="Fecha Nacimiento"/>
-                <field name="sexo" string="Sexo"/>
+                <field name="sexo_id" string="Sexo"/>
                 <field name="especie_id" string="Especie"/>
                 <field name="zoo_id" string="Zoo"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="animal_view_form" model="ir.ui.view">
+        <field name="name">animal.form</field>
+        <field name="model">animal</field>
+        <field name="arch" type="xml">
+            <form string="Animal Form">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="nombre" string="Nombre"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                        <field name="sexo_id" widget="many2one_tags" options="{'color_field': 'color'}"/>
+                            <field name="fecha_nacimiento" string="Fecha Nacimiento"/>
+                            <field name="edad" string="Edad"/>
+                        </group>
+                        <group>
+                            <field name="continente_origen" string="Continente Origen"/>
+                            <field name="pais_origen" string="Pais Origen"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Zoo">
+                            <group>
+                                <field name="zoo_id" string="Zoo Pertenece"/>
+                            </group>
+                        </page>
+                        <page string="Especie">   
+                            <field name="especie_id" string="Especie Pertenece"/>     
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
         </field>
     </record>
 

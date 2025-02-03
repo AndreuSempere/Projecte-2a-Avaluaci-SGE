@@ -4,6 +4,10 @@
         <menuitem id="zoo_menu_action" action="zoo_action" name="Zoo's"/>
         <menuitem id="especie_menu_action" action="especie_action" name="Especie"/>
         <menuitem id="animal_menu_action" action="animal_action" name="Animal"/>
-    </menuitem>
 
+        <menuitem id="zoo_settings_menu" name="Settings">
+            <menuitem id="animal_sexo_tags_menu_action" action="animal_sexo_tags_action" name="Tipo de sexo"/>
+            <menuitem id="familia_menu_action" action="familia_action" name="Familia Especies"/>
+        </menuitem>
+    </menuitem>
 </odoo>

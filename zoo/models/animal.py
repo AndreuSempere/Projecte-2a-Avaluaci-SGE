@@ -5,6 +5,7 @@ from datetime import date
 class Animal(models.Model):
     _name = 'animal'
     _description = 'Animal Model'
+    _rec_name = 'nombre' 
 
     nombre = fields.Char(string="Nombre", required=True)
     continente_origen = fields.Selection(
@@ -17,20 +18,17 @@ class Animal(models.Model):
         ],
         string="Continente Origen"
     )
-    pais_origen = fields.Char(string="Pais Origen")
-    fecha_nacimiento = fields.Date(copy=False)
+    pais_origen = fields.Many2one('res.country', string="País", required=True)
+    fecha_nacimiento = fields.Date(copy=False, string="Fecha Nacimiento")
     edad = fields.Integer(string="Edad", compute="edad_computada")
-    sexo = fields.Selection(
-        [
-            ('macho', 'Macho'),
-            ('hembra', 'Hembra'),
-        ],
-        string="Sexo"
-    )
+
     # Relación con la tabla zoo de ManyToOne
     zoo_id = fields.Many2one('zoo', string="Zoo", options={'no_create': True, 'no_edit': True})
     # Relación con la tabla especie de ManyToOne
     especie_id = fields.Many2one('especie', string="Especie", options={'no_create': True, 'no_edit': True})
+
+    sexo_id = fields.Many2one("animal.sexo.tags", string="Sexo")
+
 
     @api.depends('fecha_nacimiento')
     def edad_computada(self):

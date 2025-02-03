@@ -1,0 +1,34 @@
+<odoo>
+    <record id="animal_sexo_tags_action" model="ir.actions.act_window">
+        <field name="name">Sexo Animal</field>
+        <field name="res_model">animal.sexo.tags</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_animal_sexo_tags_tree" model="ir.ui.view">
+        <field name="name">animal.sexo.tags.tree</field>
+        <field name="model">animal.sexo.tags</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sexo"/>
+                <field name="color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_animal_sexo_tags_form" model="ir.ui.view">
+        <field name="name">animal.sexo.tags.form</field>
+        <field name="model">animal.sexo.tags</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="sexo"/>
+                        <field name="color" widget="color_picker"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+</odoo>
