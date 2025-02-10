@@ -10,3 +10,7 @@ class Familia(models.Model):
     
     # Relación con la tabla Especie de One2Many
     especie_id = fields.One2many('especie', 'familia_id', string="Especies")
+
+    _sql_constraints = [
+        ('unique_tag_name', 'UNIQUE(nombre)', 'La familia no se puede repetir.')
+    ]

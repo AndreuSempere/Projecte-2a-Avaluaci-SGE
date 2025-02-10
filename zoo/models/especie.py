@@ -7,7 +7,13 @@ class Especie(models.Model):
 
 
     name_vulgar = fields.Char(string="Nombre común", required=True)
+    _sql_constraints = [
+        ('unique_tag_name', 'UNIQUE(name_vulgar)', 'El nombre vulgar no se puede repetir.')
+    ]
     name_cientifico = fields.Char(string="Nombre científico", required=True)
+    _sql_constraints = [
+        ('unique_tag_name', 'UNIQUE(name_cientifico)', 'El nombre cientifico no se puede repetir.')
+    ]
     peligro = fields.Selection(
         [   
             ('nulo', 'Nulo'),

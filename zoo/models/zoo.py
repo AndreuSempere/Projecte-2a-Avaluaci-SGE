@@ -13,6 +13,7 @@ class Zoo(models.Model):
             ('europa', 'Europa'),
             ('asia', 'Asia'),
             ('africa', 'Africa'),
+            ('oceania', 'Oceania'),
         ],
         string="Continente"
     )
@@ -20,8 +21,12 @@ class Zoo(models.Model):
     provincia_id = fields.Many2one('res.country.state', string="Provincia", domain="[('country_id', '=', pais_id)]")
     ciudad = fields.Char(string="Ciudad")
     superficie = fields.Integer(string="Superficie (m2)")
-
     cantidad_animales = fields.Integer(string="Cantidad de animales", compute="_compute_cantidad_animales", store=True)
+    image_zoo = fields.Image(string="Img ZOO")
+    image_horario = fields.Image(string="Img Horario")
+    image_mapa = fields.Image(string="Mapa del Zoo")
+
+
 
     # Relación con la tabla animal de OneToMany
     animal_ids = fields.One2many('animal', 'zoo_id', string="Animales")
@@ -35,3 +40,14 @@ class Zoo(models.Model):
     def _compute_cantidad_animales(self):
         for zoo in self:
             zoo.cantidad_animales = len(zoo.animal_ids)
+
+    def action_get_animals_record(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Animales en el Zoo',
+            'view_mode': 'tree,form',
+            'res_model': 'animal',
+            'domain': [('zoo_id', '=', self.id)],
+            'context': "{'create': False}"
+        }

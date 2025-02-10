@@ -12,9 +12,8 @@ class AnimalSexoTags(models.Model):
         string="Tipo"
     )
     color = fields.Integer(string="Color", default=0)
-
     animal_ids = fields.One2many('animal', 'sexo_id', string="Animales")
 
     _sql_constraints = [
-        ('unique_tag_name', 'UNIQUE(sexo)', 'The tag name must be unique.')
+        ('unique_tag_name', 'UNIQUE(sexo)', 'El sexo no se puede repetir.')
     ]

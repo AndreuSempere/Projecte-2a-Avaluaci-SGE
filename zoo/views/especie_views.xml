@@ -27,8 +27,8 @@
             <form string="Especie Form">
                 <sheet>
                     <div class="oe_title">
-                        <h3><field name="name_vulgar" string="Nombre Vulgar"/></h3>
-                        <h3><field name="name_cientifico" string="Nombre Cientifico"/></h3>
+                        <h3>Nombre vulgar: <field name="name_vulgar"/></h3>
+                        <h3>Nombre Científico: <field name="name_cientifico"/></h3>
                     </div>
                     <group>
                         <group>
@@ -37,12 +37,12 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Animales Pertenecen">
+                        <page string="Animales">
                             <group>
                                 <field name="animal_ids"/>
                             </group>
                         </page>
-                        <page string="Familia Pertenecen">
+                        <page string="Familia">
                             <group>
                                 <field name="familia_id"/>
                             </group>

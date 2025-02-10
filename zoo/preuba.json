@@ -1,0 +1,112 @@
+# Ejemplo de Familias
+familia_1 = self.env['familia'].create({'nombre': 'Felidae', 'descripcion': 'Familia de los felinos'})
+familia_2 = self.env['familia'].create({'nombre': 'Canidae', 'descripcion': 'Familia de los cánidos'})
+
+# Ejemplo de Especies
+especie_1 = self.env['especie'].create({'name_vulgar': 'León', 'name_cientifico': 'Panthera leo', 'peligro': 'medio', 'peligro_extincion': True, 'familia_id': familia_1.id})
+especie_2 = self.env['especie'].create({'name_vulgar': 'Tigre', 'name_cientifico': 'Panthera tigris', 'peligro': 'alto', 'peligro_extincion': True, 'familia_id': familia_1.id})
+especie_3 = self.env['especie'].create({'name_vulgar': 'Lobo', 'name_cientifico': 'Canis lupus', 'peligro': 'bajo', 'peligro_extincion': False, 'familia_id': familia_2.id})
+especie_4 = self.env['especie'].create({'name_vulgar': 'Zorro', 'name_cientifico': 'Vulpes vulpes', 'peligro': 'nulo', 'peligro_extincion': False, 'familia_id': familia_2.id})
+especie_5 = self.env['especie'].create({'name_vulgar': 'Elefante africano', 'name_cientifico': 'Loxodonta africana', 'peligro': 'alto', 'peligro_extincion': True, 'familia_id': None})
+
+# Ejemplo de animales
+animal_1 = self.env['animal'].create({
+    'nombre': 'Simba',
+    'continente_origen': 'africa',
+    'pais_origen': self.env.ref('base.co_Colombia'),
+    'fecha_nacimiento': '2015-07-10',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_1.id,
+    'zoo_id': self.env.ref('zoo_1').id
+})
+
+animal_2 = self.env['animal'].create({
+    'nombre': 'Sher Khan',
+    'continente_origen': 'asia',
+    'pais_origen': self.env.ref('base.in_India'),
+    'fecha_nacimiento': '2016-04-15',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_2.id,
+    'zoo_id': self.env.ref('zoo_1').id
+})
+
+animal_3 = self.env['animal'].create({
+    'nombre': 'Lassie',
+    'continente_origen': 'america',
+    'pais_origen': self.env.ref('base.us_United_States'),
+    'fecha_nacimiento': '2013-03-20',
+    'sexo_id': self.env.ref('animal_sexos.hembra').id,
+    'especie_id': especie_3.id,
+    'zoo_id': self.env.ref('zoo_2').id
+})
+
+animal_4 = self.env['animal'].create({
+    'nombre': 'Rex',
+    'continente_origen': 'europa',
+    'pais_origen': self.env.ref('base.de_Germany'),
+    'fecha_nacimiento': '2018-01-10',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_4.id,
+    'zoo_id': self.env.ref('zoo_2').id
+})
+
+animal_5 = self.env['animal'].create({
+    'nombre': 'Dumbo',
+    'continente_origen': 'africa',
+    'pais_origen': self.env.ref('base.co_Colombia'),
+    'fecha_nacimiento': '2014-09-25',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_5.id,
+    'zoo_id': self.env.ref('zoo_3').id
+})
+
+# Añadir más animales si es necesario
+animal_6 = self.env['animal'].create({
+    'nombre': 'Tigris',
+    'continente_origen': 'asia',
+    'pais_origen': self.env.ref('base.cn_China'),
+    'fecha_nacimiento': '2017-06-17',
+    'sexo_id': self.env.ref('animal_sexos.hembra').id,
+    'especie_id': especie_2.id,
+    'zoo_id': self.env.ref('zoo_1').id
+})
+
+animal_7 = self.env['animal'].create({
+    'nombre': 'Foxy',
+    'continente_origen': 'europa',
+    'pais_origen': self.env.ref('base.gb_United_Kingdom'),
+    'fecha_nacimiento': '2019-10-10',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_4.id,
+    'zoo_id': self.env.ref('zoo_2').id
+})
+
+animal_8 = self.env['animal'].create({
+    'nombre': 'Bella',
+    'continente_origen': 'america',
+    'pais_origen': self.env.ref('base.br_Brazil'),
+    'fecha_nacimiento': '2015-05-05',
+    'sexo_id': self.env.ref('animal_sexos.hembra').id,
+    'especie_id': especie_3.id,
+    'zoo_id': self.env.ref('zoo_3').id
+})
+
+animal_9 = self.env['animal'].create({
+    'nombre': 'Max',
+    'continente_origen': 'africa',
+    'pais_origen': self.env.ref('base.za_South_Africa'),
+    'fecha_nacimiento': '2014-11-23',
+    'sexo_id': self.env.ref('animal_sexos.macho').id,
+    'especie_id': especie_1.id,
+    'zoo_id': self.env.ref('zoo_1').id
+})
+
+animal_10 = self.env['animal'].create({
+    'nombre': 'Zara',
+    'continente_origen': 'asia',
+    'pais_origen': self.env.ref('base.in_India'),
+    'fecha_nacimiento': '2018-08-15',
+    'sexo_id': self.env.ref('animal_sexos.hembra').id,
+    'especie_id': especie_2.id,
+    'zoo_id': self.env.ref('zoo_2').id
+})
